@@ -11,10 +11,6 @@ class Node{
 		Node(){
 			next=nullptr;
 		}
-		Node(T data){
-			this->data=data;
-			next=nullptr;
-		}
 		Node(T data, Node *n){
 			this->data=data;this->next=n;
 		}
@@ -80,6 +76,10 @@ class Stack {
 		T back(){
 			return tail->get_data();
 		}
+		T front(){
+			return head->get_data();
+		}
+			
 		int get_size(){
 			return size;
 		}
@@ -99,19 +99,16 @@ main(){
 		cin >> x;
 		stack.push(x);
 	}
-	if(stack.Empty()==1) cout<<"Empty !";
-	else stack.pop();
-	cout<< stack.get_size( );
-	cout<<endl;
-	cout<<"Day sau khi da loai phan tu dau tien: ";
-	for(int i=1; i <= n-1; i++ ){	
-		cout<<stack.pop();               
-	}
-	cout<<"\nPhan tu dau tien: "<<stack.back();
+	if( stack.Empty() == true) cout<<"EMPTY !";
+	cout<<"\nPhan tu dau tien: "<<stack.front();
 
 
 	return 0;
 }
+
+	 
+
+
 
 	 
 
