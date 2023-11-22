@@ -1,0 +1,5 @@
+Tong hai da thuc la: 6x^7+4x^5+4x^5+3x^4
+
+Hieu hai da thuc la: 6x^7-4x^5+4x^5-3x^4
+
+Tich hai da thuc la: -24x^12-18x^11-16x^10-12x^9
