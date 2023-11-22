@@ -9,56 +9,65 @@ private:
 
 public:
     Stack() {
-        top=-1; // Khoi tao ngan xep là rong
+        top = 0; // Khoi tao ngan xep lÃ  rong
     }
-	//Ham them
+
     void push(int n) {
-        if (top==10000 - 1) { // Kiem tra xem ngan xep da day chua
+        if (top == 10000 ) { // Kiem tra xem ngan xep da day chua
             cout << "FULL!" << endl;
         } else {
-            top++; // Tang ch? s? trên cùng
-            data[top] = n; // Thêm ph?n t? vào ngan x?p
+            top++; // Tang ch? s? trÃªn cÃ¹ng
+            data[top] = n; // ThÃªm ph?n t? vÃ o ngan x?p
         }
     }
-	//ham lay phan tu
+
     void pop() {
-        if (top == -1) { // Kiem tra xem ngan xep da rong chua
+        if (top == 0) { // Kiem tra xem ngan xep da rong chua
             cout << "EMPTY" << endl;
         } else {
-            top--; // Giam chi so trên cùng
+            top--; // Giam chi so trÃªn cÃ¹ng
         }
     }
-	//Kiem tra rong
+
     void empty() {
-        if (top == -1) {
+        if (top == 0) {
             cout << "EMPTY!" << endl;
         } else {
-            cout << data[top] << endl; // In phan tu trên cùng
+            cout << data[top] << endl; // In phan tu trÃªn cÃ¹ng
         }
     }
-	//Thuat toan bai ()((()))
-    void Find(string& k) {
-        int n = k.length();
-        for (int i = 0; i < n; i++) {
-            if (k[i] == '(') { // Mo ngoac
-                push(i + 1); // Thêm chi so vào ngan xep
-            } else if (k[i] == ')') { // Dong ngoac
-                if (top >= 0) { // Kiem tra xem ngan xep không rong
-                    cout << data[top] << " " << i + 1 << endl; // In ra
-                    pop(); // Xoa ngoac mo khop
-                }
-            }
-        }
-    }
+    void front(){
+    	if (top == 0){
+    		cout<<"EMPTY !";
+		}
+		else
+		cout<< data[1];
+	}
+	 void back(){
+    	if (top == 0){
+    		cout<<"EMPTY !";
+		}
+		else
+		cout<< data[top];
+	}
+    
+
 };
 
 int main() {
     Stack stack;
-    string k;
+    int n;
+	cin>>n;	
+    for(int i=1; i<=n; i++){
+    	int k;
+    	cin >> k;
+    	stack.push(k);
+	}
+	cout<<"Phan tu dau tien la: ";
+//	stack.pop();
 
-    cin >> k;
-
-    stack.Find(k);
+    stack.back();
 
     return 0;
 }
+
